@@ -1,0 +1,763 @@
+---
+layout: index
+title: Florida Virtual School - TEST VERSION
+css: 
+js: sliders.js
+---
+{% include JB/setup %}
+<meta name="description" content="The mission of the Florida Virtual School is to equip students for success by developing and delivering highly effective digital learning through an intuitive online platform.">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.box {
+  transition: box-shadow .3s;
+}
+.box:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+
+#button {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Styles for the content section */
+
+.content {
+  width: 77%;
+  margin: 50px auto;
+  font-family: 'Merriweather', serif;
+  font-size: 17px;
+  color: #6c767a;
+  line-height: 1.9;
+}
+@media (min-width: 500px) {
+  .content {
+    width: 43%;
+  }
+  #button {
+    margin: 30px;
+  }
+}
+.content h1 {
+  margin-bottom: -10px;
+  color: #03a9f4;
+  line-height: 1.5;
+}
+.content h3 {
+  font-style: italic;
+  color: #96a2a7;
+}
+	
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
+statisticsbg {
+  background-color: #303C4B
+}
+
+/* Extra Things */
+body{background: #eee ;font-family: 'Open Sans', sans-serif;}h3{font-size: 30px; font-weight: 400;text-align: center;margin-top: 50px;}h3 i{color: #444;}
+</style>
+<script>
+    // ===== Scroll to Top ==== 
+$(window).scroll(function() {
+    if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+        $('#return-to-top').fadeIn(200);    // Fade in the arrow
+    } else {
+        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+    }
+});
+$('#return-to-top').click(function() {      // When arrow is clicked
+    $('body,html').animate({
+        scrollTop : 0                       // Scroll to top of body
+    }, 500);
+});
+</script>
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+<script src="smooth-nav.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+            <!-- navbar-default -->
+            <nav class="navbar navbar-toggleable-sm navbar-light bg-default">
+              <div class="container">
+                <a class="navbar-brand" href="/"><img src="{{ BASE_PATH }}/assets/images/logo.png" width="100" height="100" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar1">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#statistics">Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Student Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#map">Find Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tsa">TSA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://www.sixfigureinitiative.ga">Design Brief</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://documentation.flvswebmaster.ga">Documentation</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+<!-- Content Area Start -->
+<div id="content">
+      <!-- Light header -->
+        <div class="header-style-3">
+        <div class="container">
+        <div class="row">
+        <div class="col-xs-12 col-sm-6">
+        </div> 
+            <div class="col-xs-12 col-sm-6">
+              <div class="hero-content-v2">
+                <center><h3><strong>Florida Virtual School</strong></h3></center>
+                <center><p>
+                  2145 Metrocenter Blvd #100, Orlando, FL 32835
+                </p></center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <section id="intro1" style="background-color:#303C4B">
+            <div class="header-caption">
+              <div class="row">
+                <div class="col-md-12 header-content">
+                  <center><h3 style="color:white">Mission</h3></center>
+                  <center><h5 style="color:white" class="header-text animated fadeIn">To equip students for success by developing and delivering highly effective digital learning through an intuitive online platform.</h5></center>
+                  <br>
+                  <br>
+                  <center><h3 style="color:white">Vision</h3></center>
+                  <center><h5 style="color:white" class="header-text animated fadeIn">To lead online education worldwide with innovative digital solutions that individualize learning for each student.</h5></center>
+                  <br><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+      </section>
+      <section id="courses">
+        <div class="container">
+              <div class="row">
+              <div class="col-md-20">
+              <div class="page-header-title">
+                <center><h1 class="heading-title text-center">COURSE OFFERINGS AT FLORIDA VIRTUAL SCHOOL</h1></center>
+              </div>
+            </div>
+          </div>
+          <center><h3>Technology Education Courses</h3></center><br>
+          <div class="row">
+          
+          <!-- Content Area Start -->
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+                <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Digital Information Technology</h3>
+                <p class="card-text">Prerequisites: None<br><br>This exciting course provides you with the foundational skills needed for future careers in a variety of technological fields.  You’ll explore emerging technologies, digital design, Microsoft Office online applications, operating systems, and much more! Learn your strengths and how they relate to potential career opportunities.<br><br><br></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Content Area Start -->
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Foundations of Programming</h3>
+                <p class="card-text">Prerequisites: Digital Information Technology (or Introduction to Information Technology) and Algebra 1 recommended<br><br>Learn the skills required to be competitive in today’s high-tech workforce.  This course covers the fundamentals of programming using the computer language Python.  It provides you with the concepts, techniques, and processes associated with computer programming and software development.  You’ll also explore the vast programming career opportunities available in this high-demand field.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-12 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Procedural Programming</h3>
+                <p class="card-text">Prerequisites: Digital Information Technology, Foundations of Programming<br><br>Do you want to learn higher-level coding skills? This course teaches advanced programming concepts using the computer language Python.  You will learn techniques and processes associated with computer programming and software development.<br><br><br><br><br><br><br><br></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">AP Computer Science A</h3>
+                <p class="card-text">Prerequisites: Algebra 1 required.  Algebra 2 and prior programming experience (i.e.  Foundations of Programming) recommended<br><br>Develop the skills required to write programs or parts of programs to correctly solve specific problems.  You will learn design techniques to make programs understandable, adaptable, and reusable.<br><br><br><br><br><br><br><br></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Computer and Network Security Fundamentals</h3>
+                <p class="card-text">Prerequisites: Digital Information Technology<br><br>This course covers the fundamentals of computer safety, network security, and prevention of digital attacks.  Experience a hands-on approach to security strategies and explore employment opportunities in one of the fastest-growing industries: Cybersecurity.<br><br><br><br><br></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Cybersecurity Essentials</h3>
+                <p class="card-text">Prerequisites: Digital Information Technology, Computer and Network Security Fundamentals<br><br>Have you or someone you know ever had personal information compromised? This inspiring course covers defensive strategies for computer, mobile device, and network security.  You’ll experience a hands-on approach to security strategies, expand your computer and networking security techniques, and improve your problem-solving skills.  You will also explore numerous employment opportunities and prepare for one of the fastest-growing industries: Cybersecurity.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Agriscience Foundations 1</h3>
+                <p class="card-text">Prerequisites: None<br><br>Dive into agricultural history and its global impact and learn about scientific and research concepts that drive the field, as well as the effects of agriculture on the environment.  The course will teach you about agriculture career opportunities and how to best promote yourself to land your dream job.  Specialized lab activities provide hands-on practice to master the lessons and you will have the unique experience of interviewing an agriscience worker related to your career interest.   Agriculture Associate certification is included at the end of the course.<br><br><br></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Agricultural Communications 2</h3>
+                <p class="card-text">Prerequisites: Agriscience Foundations 1<br><br>In Agricultural Communications 2, students are introduced to visual, verbal, and written techniques to communicate agricultural information.  This course prepares students with specialized knowledge of agriculture and media as they learn to design and develop marketing materials, engage in the community, and address needs of agricultural producers and consumers in a moral and ethical way.<br><br><br><br><br></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          </div>
+            </div>
+            </div>
+            </div>
+            </div>
+    </div>
+          <!-- End card -->
+          <br><br><br>
+          <div class="tabs-accordions">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-20">
+            </div>
+          </div>
+          <center><h2>Business and Career Courses</h2></center><br>
+          <div class="row">
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Accounting Applications 1</h3>
+                <p class="card-text">Prerequisites: None<br><br>Learning the basics of accounting can help you start and run a business, get a head start in college courses, and teach you how to create a personal budget.  In Accounting Applications 1, students will build a broad foundation of knowledge and skills of accounting concepts in order to analyze, classify, and record business transactions in a manual and computerized setting (Excel and QuickBooks); prepare financial statements and communicate information to stakeholders; maintain payroll records, and determine proper handling of cash control procedures.   QuickBooks certification is included at the end of the course.<br><br></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Criminal Justice Operations 1</h3>
+                <p class="card-text">Prerequisites: None<br><br>Explore the fields of law enforcement, the court system, and the correctional system.  You will acquire technical skill proficiency, industry knowledge, higher-order reasoning and problem-solving skills, general employability skills, and occupation-specific skills needed in all aspects of law, public safety, and security careers.<br><br><br><br><br><br></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Introduction to Hospitality & Tourism</h3>
+                <p class="card-text">Prerequisites: None<br><br>This course is the first in a series to dive into the numerous career avenues and business opportunities of the hospitality and tourism industry.  You will learn about segments such as airlines, hotels, and cruise ships, as well as customer service and selling techniques.  The course will prepare you to launch your career in hospitality and tourism, with projects and take-aways that you will be able to use immediately to help you land your dream job.<br><br><br></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Introduction to the Teaching Profession</h3>
+                <p class="card-text">Prerequisites: None<br><br>This course is designed to explore what it takes to be a teacher.  You’ll learn about the history, purposes, issues, ethics, laws and regulations, roles and qualifications of teaching.  As you work through the course, you’ll participate in a minimum of 20 hours of guided observations and field experience in different settings.  This will help you identify what teaching career path interests and suits you best, as well as effective learning environments.  You’ll also build a working portfolio throughout your program, as you learn about leadership and skills opportunities offered in participated in CTSO activities.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Parenting Skills</h3>
+                <p class="card-text">Prerequisites: None<br><br>Parenting involves more than having a child and providing food and shelter.  Take this one-semester course to explore parenting roles and responsibilities, nurturing and protective environments for children, positive parenting strategies, and effective communication in parent/child relationships.<br><br><br><br><br><br></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Culinary Arts 1</h3>
+                <p class="card-text">Prerequisites: None<br><br>This course covers the history of the food service industry and careers in that industry.  Also covered are safety in the workplace; employability skills; leadership/teamwork skills; care and use of commercial culinary equipment; basic food science; basic nutrition; and following recipes in food preparation labs.<br><br><br><br><br></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Culinary Arts 2</h3>
+                <p class="card-text">Prerequisites: Culinary Arts 1<br><br>This course covers state mandated guidelines for food service and safe handling certification.  Students will prepare quality food products demonstrating creativity, safety, and sanitary work procedures as it relates to food science principles including cooking, baking, and nutrition.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Career Research and Decision Making</h3>
+                <p class="card-text">Prerequisites: None<br><br>This course will show you how to prepare for, get accepted to and pay for college.  You will explore different career and education pathways, study interview techniques and networking tips, create smart resumes, and learn how to plan for a successful future.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Personal Financial Literacy</h3>
+                <p class="card-text">Prerequisites: Alegabra I recommended<br><br>Saving.  Investing.  Spending! Learn how to save and spend wisely, the ins and outs of credit, avoidance of identity theft, and how to make the most of investing your hard-earned money.  Become a smart financial decision-maker and let your future self reap the benefits.<br><br><br><br><br></p>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-6">
+            <div class="card">
+            <div class="box">
+              <div class="card-block text-center">
+                <h3 class="card-title">Leadership Skills Development</h3>
+                <p class="card-text">Prerequisites: None<br><br>Succeed in high school, college, and beyond by taking your future into your own hands.  In this two-semester course, you will learn how to take action, manage your time, chart your goals, and many other leadership techniques.  This course provides elective credit only.</p><br><br><br><br>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+          <!-- End card -->
+                  
+              </div>
+            </div>
+            </div>
+            </div>
+            </div>
+    </div>
+	</section>
+<br>
+
+<section id="statistics" style="background-color:#303C4B">
+     <div id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-header-title">
+              <h2 class="heading-title text-center" style="color:white">Statistics</h2>
+            </div>
+          <div class="row count-to-sec">
+            <div class="col-md-3 col-sm-6 count-one">
+              <span class="icon"><i class="fa fa-check"> </i></span>
+              <h3 class="timer count-value" data-to="757540" data-speed="500">757,540</h3>
+              <hr class="width25-divider">
+              <small class="count-title">Total Semester Completions</small>
+            </div>
+
+            <div class="col-md-3 col-sm-6 count-one">
+              <span class="icon"><i class="fa fa-user"> </i></span>
+              <h3 class="timer count-value" data-to="244839" data-speed="500">244,839</h3>
+              <hr class="width25-divider">
+              <small class="count-title">Students Served</small>
+            </div>
+
+            <div class="col-md-3 col-sm-6 count-one">
+              <span class="icon"><i class="fa fa-graduation-cap"> </i></span>
+              <h3 class="timer count-value" data-to="1048" data-speed="500">1,048</h3>
+              <hr class="width25-divider">
+              <small class="count-title">Full Time Graduates</small>
+            </div>
+
+            <div class="col-md-3 col-sm-6 count-one">
+              <span class="icon"><i class="fa fa-users"> </i></span>
+              <h3 class="timer count-value" data-to="60" data-speed="500">60+</h3>
+              <hr class="width25-divider">
+              <small class="count-title">Clubs</small>
+            </div>
+          </div>
+          <center><p style="color:white">*These are statistics from the 2020-2021 school year</p></center>
+        </div>
+      </div>
+</section>
+
+<section id="projects">
+            <div id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-header-title">
+              <h2 class="heading-title text-center">Student Projects</h2>
+            </div>
+
+<div class="row">
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/more_decisions.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">More Decisions Project</h3>
+                <p class="card-text">In Foundations of Programming, students are tasked with designing a program, coded in Python, in which the user is able to navigate a cursor in the middle of the program screen in whichever direction they choose.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/all_about_me.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">All About Me Project</h3>
+                <p class="card-text">In Digital Information Technology, students are tasked with creating a PowerPoint to showcase what they are all about, in turn to use the new skills they learned within the program.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/resume.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Resume Project</h3>
+                <p class="card-text">In Career Research and Decision Making, students put together a resume to learn how to make an effective one that they would use in the future to help them land the job that they want.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/guess_the_number-1.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Iterative Loops Project</h3>
+                <p class="card-text">In Procedural Programming, students design a text-based adventure program, coded in Python, to show off their advanced knowledge of looping.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/commercial-pitch.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Speech Project</h3>
+                <p class="card-text">In Agricultural Communications 2, students learn how to develop a speech, and are then tasked with putting one together themselves.  This helps them to learn real-world skills that can be used across all career fields.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/hello_world.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Hello World Project</h3>
+                <p class="card-text">In AP Computer Science A, students design their first program using the two most famous words in programming, "Hello, World!"</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/food_labs.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Food Labs</h3>
+                <p class="card-text">In Culinary Arts 1/2, students particiapte in various food labs to demonstrate their understanding of preparing food, safe use of equipment, and nutrition.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/budget.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Budget Project</h3>
+                <p class="card-text">In Personal Financial Literacy, students learn how to keep track of their expenses, while sticking to a set budget that they create.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+        </div>
+
+</section>
+<section id="map" style="background-color:#303C4B">
+<div id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-header-title">
+              <h2 class="heading-title text-center" style="color:white">Find Us</h2>
+            </div>
+<center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.195107542658!2d-81.46997438510931!3d28.519007582462734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77921a2cd39b5%3A0x7e33b9b9fb38536b!2sFlorida%20Virtual%20School!5e1!3m2!1sen!2sus!4v1640880398228!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+      <footer class="default-footer text-center">
+        <div class="container">
+          <br /><br /><br />
+          <img class="mb-40 footer-logo" src="https://www.flvswebmaster.ga/assets/images/logo.png" width="150" height="150">
+          <span class="copy-right dis-blk">2022 TSA Webmaster Project</span>
+          
+        </div>
+      </footer>
+            
+            
+<!-- Content area end -->
+</div>

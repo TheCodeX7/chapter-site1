@@ -1,0 +1,1351 @@
+---
+layout: index
+title: Florida Virtual School
+css: 
+js: sliders.js
+---
+{% include JB/setup %}
+<meta name="description" content="The mission of the Florida Virtual School is to equip students for success by developing and delivering highly effective digital learning through an intuitive online platform.">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+<link rel="stylesheet" href="https://chapter.exosyzygy.com/assets/css/scrolling-nav.css">
+<script src="https://kit.fontawesome.com/de2281384c.js" crossorigin="anonymous"></script>
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.box {
+  transition: box-shadow .3s;
+}
+.box:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+
+#button {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.inactiveLink {
+   pointer-events: none;
+   cursor: default;
+}
+
+/* Styles for the content section */
+
+.content {
+  width: 77%;
+  margin: 50px auto;
+  font-family: 'Merriweather', serif;
+  font-size: 17px;
+  color: #6c767a;
+  line-height: 1.9;
+}
+@media (min-width: 500px) {
+  .content {
+    width: 43%;
+  }
+  #button {
+    margin: 30px;
+  }
+}
+.content h1 {
+  margin-bottom: -10px;
+  color: #03a9f4;
+  line-height: 1.5;
+}
+.content h3 {
+  font-style: italic;
+  color: #96a2a7;
+}
+
+
+statisticsbg {
+  background-color: #303C4B
+}
+
+@media(min-width:767px) {
+    .navbar-tr {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+.embed-container { position: center; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: center; top: 0; left: 0; width: 600px; height: 450px; }
+
+/* Extra Things */
+body{background: #eee ;font-family: 'Open Sans', sans-serif;}h3{font-size: 30px; font-weight: 400;text-align: center;margin-top: 50px;}h3 i{color: #444;}
+</style>
+
+<script src="smooth-nav.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+            <!-- navbar-default -->
+            <nav class="navbar navbar-tr navbar-toggleable-sm navbar-light bg-default">
+              <div class="container">
+                <a class="navbar-brand inactiveLink" href="/"><img alt="" data-cms-original-src="/assets/images/logo.png" src="/assets/images/logo.png?_cchid=869d798af37efdba7eb65ab066d430ef"></a>
+                <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar1" data-toggle="collapse" type="button">
+                  <i class="fa fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar1">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#statistics">Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#projects">Student Projects</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/tsa">TSA</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" target="_blank" href="https://www.exosyzygy.com">Design Brief</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" target="_blank" href="https://documentation.exosyzygy.com">Documentation</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+
+      <!-- Light header -->
+        <div class="header-style-3">
+        <div class="container">
+        <div class="row">
+        <div class="col-xs-12 col-sm-6">
+        </div> 
+            <div class="col-xs-12 col-sm-6">
+              <div class="hero-content-v2">
+                <center><h3><strong>Florida Virtual School</strong></h3></center>
+                <center><p>
+                  5422 Carrier Drive, Suite 201, Orlando, FL 32819
+                </p></center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <section id="intro1" style="background-color:#303C4B">
+            <div class="header-caption">
+              <div class="row">
+                <div class="col-md-12 header-content">
+                  <center><h3 style="color:white">Mission</h3></center>
+                  <center><h5 style="color:white" class="header-text animated fadeIn">To equip students for success by developing and delivering highly effective digital learning through an intuitive online platform.</h5></center>
+                  <br>
+                  <br>
+                  <center><h3 style="color:white">Vision</h3></center>
+                  <center><h5 style="color:white" class="header-text animated fadeIn">To lead online education worldwide with innovative digital solutions that individualize learning for each student.</h5></center>
+                  <br><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div></div>
+      </section>
+      <div id="courses">
+      <section>
+        <div class="container">
+              <div class="row">
+              <div class="col-md-20">
+              <div class="page-header-title">
+                <center><h1 class="heading-title text-center">COURSE OFFERINGS AT FLORIDA VIRTUAL SCHOOL</h1></center>
+              </div>
+              
+              
+          <!-- Alternative Course Offerings Display -->
+          <!-- accordions -->
+          <!--<div class="row">
+          <div class="container">  
+            <!-- default accordions -->
+            <!--<div class="col-sm-20">
+              <div class="container">
+              <div class="panel-group" href="#cs">
+                <div class="panel">
+                  <div class="panel-heading">
+                    <a class="panel-title collapsed" data-toggle="collapse" href="#cs"><object data="/assets/images/svg/computer-science.png" width="20" height="20"></object>  Computer Science</a>
+                  </div>
+                  <div class="panel-collapse collapse" id="cs">
+                    <div class="panel-body text-gray">
+                      <b>AP Computer Science A</b><br />
+                      Develop the skills required to write programs or parts of programs to correctly solve specific problems.  Students will learn design techniques to make programs understandable, adaptable, and reusable.<br /><br />
+                      <b>Foundations of Programming</b><br />
+                      Learn the skills required to be competitive in today’s high-tech workforce.  This course covers the fundamentals of programming using the computer language Python.  It provides students with the concepts, techniques, and processes associated with computer programming and software development.  Students also explore the vast programming career opportunities available in this high-demand field.<br /><br />
+                      <b>Procedural Programming</b><br />
+                      For students who want to learn higher-level coding skills, this course teaches advanced programming concepts using the computer language Python.  Students learn techniques and processes associated with computer programming and software development.<br /><br />
+                      <b>Digital Information Technology</b><br />
+                      This exciting course provides students with the foundational skills needed for future careers in a variety of technological fields.  They explore emerging technologies, digital design, Microsoft Office online applications, operating systems, and much more! Learn personal strengths and how they relate to potential career opportunities.<br /><br />
+                      <b>Computer and Network Security Fundamentals</b><br />
+                      Covering the fundamentals of computer safety, network security, and prevention of digital attacks, this course allows students to experience a hands-on approach to security strategies and explore employment opportunities in one of the fastest-growing industries: Cybersecurity.<br /><br />
+                      <b>Cybersecurity Essentials</b><br />
+                      Covering defensive strategies for computer, mobile device, and network security, students will experience a hands-on approach to security strategies, expand your computer and networking security techniques, and improve your problem-solving skills. They also have the chance to explore numerous employment opportunities and prepare for one of the fastest-growing industries: Cybersecurity.<br /><br />
+                    </div></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+              <div class="panel-group">
+                <div class="panel">
+                  <div class="panel-heading">
+                    <a class="panel-title collapsed" data-toggle="collapse" href="#business"><object data="/assets/images/svg/briefcase-solid.png" width="20" height="20"></object>  Business and Career</a>
+                  </div>
+                  <div class="panel-collapse collapse" id="business">
+                    <div class="panel-body text-gray">
+                      <b>Accounting Applications 1</b><br />
+                      Learning the basics of accounting can help give one the skills to start and run a business, get a head start in college courses, and teach them how to create a personal budget. In Accounting Applications 1, students will build a broad foundation of knowledge and skills of accounting concepts in order to analyze, classify, and record business transactions in a manual and computerized setting (Excel and QuickBooks); prepare financial statements and communicate information to stakeholders; maintain payroll records, and determine proper handling of cash control procedures. QuickBooks certification is included at the end of the course.<br /><br />
+                      <b>Criminal Justice Operations 1</b><br />
+                      Explore the fields of law enforcement, the court system, and the correctional system. Students will acquire technical skill proficiency, industry knowledge, higher-order reasoning and problem-solving skills, general employability skills, and occupation-specific skills needed in all aspects of law, public safety, and security careers.<br /><br />
+                      <b>Introduction to Hospitality & Tourism</b><br />
+                      This course is the first in a series to dive into the numerous career avenues and business opportunities of the hospitality and tourism industry. Students will learn about segments such as airlines, hotels, and cruise ships, as well as customer service and selling techniques. The course will prepare them to launch their career in hospitality and tourism, with projects and take-aways that they will be able to use immediately to help them land their dream job.<br /><br />
+                      <b>Introduction to the Teaching Profession</b><br />
+                      This course is designed to explore what it takes to be a teacher. Students will learn about the history, purposes, issues, ethics, laws and regulations, roles and qualifications of teaching. As they work through the course, they'll participate in a minimum of 20 hours of guided observations and field experience in different settings. This will help them identify what teaching career path interests and suits them best, as well as effective learning environments. They'll also build a working portfolio throughout their program, as they learn about leadership and skills opportunities offered in participated in CTSO activities.<br /><br />
+                      <b>Parenting Skills</b><br />
+                      Parenting involves more than having a child and providing food and shelter. This one-semester course gives students the opportunity to explore parenting roles and responsibilities, nurturing and protective environments for children, positive parenting strategies, and effective communication in parent/child relationships.<br /><br />
+                      <b>Culinary Arts 1</b><br />
+                      This course covers the history of the food service industry and careers in that industry. Also covered are safety in the workplace; employability skills; leadership/teamwork skills; care and use of commercial culinary equipment; basic food science; basic nutrition; and following recipes in food preparation labs.<br /><br />
+                      <b>Culinary Arts 2</b><br />
+                      Covering state mandated guidelines for food service and safe handling certification, students will prepare quality food products demonstrating creativity, safety, and sanitary work procedures as it relates to food science principles including cooking, baking, and nutrition.<br /><br />
+                      <b>Career Research and Decision Making</b><br />
+                      In this course students will learn how to prepare for, get accepted to and pay for college. They will explore different career and education pathways, study interview techniques and networking tips, create smart resumes, and learn how to plan for a successful future.<br /><br />
+                      <b>Leadership Skills Development</b><br />
+                      Succeed in high school, college, and beyond. In this two-semester course, students will learn how to take action, manage their time, chart their goals, and many other leadership techniques.<br /><br />
+                      <b>Agricultural Communications 2</b><br />
+                      Through this course students are introduced to visual, verbal, and written techniques to communicate agricultural information. This course prepares students with specialized knowledge of agriculture and media as they learn to design and develop marketing materials, engage in the community, and address needs of agricultural producers and consumers in a moral and ethical way.<br /><br />
+                      <b>Agricultural Communications 3</b><br />
+                      This class provides real-world practice in writing, speaking, photography, graphic design, and web communication to prepare students to report and present agricultural topics with a detailed knowledge aimed to gain attention.  Students will create a communications campaign, learn how to use social media to deliver communication messages, prepare a media kit, produce persuasive videos, modify photographs, create a web page, and effectively use their voice to present and debate agricultural topics.  At the end of the course, students will have the opportunity to become industry certified as an Agricultural Communications Specialist!<br /><br />
+                      <b>Human Growth and Development</b><br />
+                      From the moment you’re born, you’re a learner. In this course, students learn about different theories of development, as well as how to apply those theories to meet the varying needs of students in their classroom. They’ll also learn what can affect a student’s development, including health and safety concerns, heredity, and their environment.<br /><br />
+                      <b>Health Science Foundations</b><br />
+                      This course is designed to provide the student with in-depth knowledge of the health care system and introduce them to various occupations in the field. Students will explore the educational requirements, licenses, and certifications for careers at multiple levels within the health care system. The learning focuses on communication and interpersonal skills, use of technology, ethics, and the development of critical thinking and problem-solving skills. Students will also learn first aid skills and how to assess vital signs.<br /><br />
+                    </div>
+                  </div>
+                </div>
+              </div></div>
+              <div class="container">
+              <div class="panel-group">
+                <div class="panel">
+                  <div class="panel-heading">
+                    <a class="panel-title collapsed" data-toggle="collapse" href="#science"><object data="/assets/images/svg/flask-solid.png" width="20" height="20"></object>  Science</a>
+                  </div>
+                  <div class="panel-collapse collapse" id="science">
+                    <div class="panel-body text-gray">
+                      <b>Physics</b><br />
+                      Discover the contributions of geniuses like Galileo, Newton, and Einstein by learning about the concepts, theories, and laws that govern the interactions of matter, forces, and energy throughout the universe and how those interactions apply to everyday experiences.<br /><br />
+                      <b>Chemistry</b><br />
+                      Atoms and molecules are the fundamental particles in our universe, and chemistry is your guide to understanding all about them. This course will strengthen scientific inquiry skills while challenging higher-order thinking processes through problem-solving and real-world applications. Chemistry is what connects all parts of the world together.<br /><br />
+                      <b>Physical Science</b><br />
+                      Ever wonder why more massive objects require more force to move? Perhaps you have questioned how new substances are made, or how energy is involved in changes in matter? These are some of the concepts students will be exploring in Physical Science. This course teaches the foundational concepts of physics and chemistry. Students will build an understanding of physical and chemical phenomena through scientific inquiry, interactive experiences, virtual and hands-on labs, higher order thinking, and collaborative projects, enabling them to apply these principles to their everyday lives.<br /><br />
+                      <b>Biology</b><br />
+                      Explore the structure, function, diversity, and evolution of living matter by taking an in-depth look at the fundamental characteristics of living organisms. You will have the opportunity to perform hands-on lab activities and develop relationships through collaborative learning.<br /><br />
+                      <b>Forensic Science</b><br />
+                      Take a look at forensics through the lens of some of the world’s most famous and intriguing crime cases. This course examines the latest forensic techniques and innovations used to solve crimes. It also focuses on basic scientific principles and laboratory processes used in the field, such as DNA testing, toxicology, and material analysis. Investigative experiences for students include spectrometry, electrophoresis, and evidence analysis techniques. Students also study crime scene processing and evidence collection during crime scene investigations (CSI).<br /><br />
+                      <b>Earth-Space Science</b><br />
+                      This laboratory course focuses on the study of space and the geologic and atmospheric forces that shape our world. Through experimentation and investigation, students will explore Earth’s cycles, including the geosphere, hydrosphere, cryosphere, atmosphere, and carbon cycle.<br /><br />
+                      <b>Environmental Science</b><br />
+                      Discuss the environmental challenges that impact our future, such as land use, pollution, climate change, and loss of biodiversity.  This course is centered around achieving global sustainability to meet the needs of a growing human population, while also maintaining natural resources and protecting Earth's various systems.  Students will also explore the short-and long-term consequences of our actions to human health and the environment are also a course focus.<br /><br />
+                      <b>Marine Science</b><br />
+                      Delve deeply into Earth’s bodies of water and study geologic structures and how they impact the oceans. Investigate characteristics of various populations of aquatic life, patterns of distribution, and ongoing changes occurring in our ecosystem.<br /><br />
+                      <b>Anatomy and Physiology</b><br />
+                      Explore the human body and learn how you can help your body cope with many different situations. Students will study the structure, location, and function of various systems within the human body and how these systems interact.<br /><br />
+                      <b>Agriscience Foundations</b><br />
+                      Dive into agricultural history and its global impact and learn about scientific and research concepts that drive the field, as well as the effects of agriculture on the environment.<br /><br />
+                    </div>
+                  </div>
+                </div>
+              </div></div>
+              <div class="container">
+               <div class="panel-group">
+                <div class="panel">
+                  <div class="panel-heading">
+                    <a class="panel-title collapsed" data-toggle="collapse" href="#economics"><object data="/assets/images/svg/hand-holding-dollar-solid.png" width="20" height="20"></object>  Economics</a>
+                  </div>
+                  <div class="panel-collapse collapse" id="economics">
+                    <div class="panel-body text-gray">
+                      <b>Economics</b><br />
+                      Economic decisions affect us every day! Students become smart consumers who understand the flow of an economy between individuals, businesses, governments, and the rest of the world.<br /><br />
+                      <b>Economics with Financial Literacy</b><br />
+                      This course helps students to become a more informed consumer, producer, investor, and taxpayer. They explore topics like career planning, insurance, spending, and credit to learn how your choices directly affect your future.<br /><br />
+                      <b>Personal Financial Literacy</b><br />
+                      Saving. Investing. Spending! Students learn how to save and spend wisely, the ins and outs of credit, avoidance of identity theft, and how to make the most of investing their hard-earned money. They become smart financial decision-makers and let their future selves reap the benefits.<br /><br />
+                      <b>AP Microeconomics</b><br />
+                      Students explore the power of marginal thinking and apply it to common decisions that individuals and business firms encounter each day. They examine, interpret, analyze, and model key microeconomics concepts and processes, from the shifting supply and demand for familiar products to the model of the labor market and how wages are determined.<br /><br />
+                      <b>AP Macroeconomics</b><br />
+                      This course helps students to understand the choices they make as a producer, consumer, investor, and tax-payer. They are provided with the knowledge and decision-making tools necessary for understanding how a society must organize its limited resources to satisfy its unlimited wants.<br /><br />
+                    </div></div>
+                  </div>
+                </div>
+              </div>-->
+            
+                  
+                  
+                   <!-- Portfolio Controller/Buttons -->
+              <div class="controls text-center fadeInUpQuick" data-wow-delay=".6s">
+                <a class="filter active btn btn-common" data-filter="all">
+                  All
+                </a>
+                <a class="filter btn btn-common" data-filter=".cs">
+                  Computer Science 
+                </a>
+                <a class="filter btn btn-common" data-filter=".business">
+                  Business &amp; Career
+                </a>
+                <a class="filter btn btn-common" data-filter=".science">
+                  Science
+                </a>
+                <a class="filter btn btn-common" data-filter=".economics">
+                  Economics
+                </a>
+              </div>
+              <!-- Portfolio Controller/Buttons Ends-->
+            </div>
+
+            <!-- Portfolio Recent Projects -->
+            <div class="row wow fadeInUpQuick" data-filter=".cs" data-wow-delay="0.8s" id="portfolio">
+              
+              <!-- Computer Science Classes -->
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix cs">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/computer-science/ap-csa.png" src="/assets/images/classes/computer-science/ap-csa.png?_cchid=73ff8f3663d479c270da9090cd887f6b">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>AP Computer Science A</h4>
+                          </a>
+                          <p class="sup-description">Develop the skills required to write programs or parts of programs to correctly solve specific problems. Students will learn design techniques to make programs understandable, adaptable, and reusable.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix cs">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/computer-science/foundations-of-programming.png" src="/assets/images/classes/computer-science/foundations-of-programming.png?_cchid=45b98bebc5c71b091369142c57c670f3">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Foundations of Programming</h4>
+                          </a>
+                          <p class="sup-description">Learn the skills required to be competitive in today’s high-tech workforce. This course covers the fundamentals of programming using the computer language Python. It provides students with the concepts, techniques, and processes associated with computer programming and software development. Students also explore the vast programming career opportunities available in this high-demand field.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix cs">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/computer-science/procedural-programming.png" src="/assets/images/classes/computer-science/procedural-programming.png?_cchid=1321a9c73ca15e9491da5ba45697b594">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Procedural Programming</h4>
+                          </a>
+                          <p class="sup-description">For students who want to learn higher-level coding skills, this course teaches advanced programming concepts using the computer language Python. Students learn techniques and processes associated with computer programming and software development.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix cs">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/computer-science/digital-information-technology.png" src="/assets/images/classes/computer-science/digital-information-technology.png?_cchid=ecdd27c8db9e8101485d018bc483d6ea">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Digital Information Technology</h4>
+                          </a>
+                          <p class="sup-description">This exciting course provides students with the foundational skills needed for future careers in a variety of technological fields. They explore emerging technologies, digital design, Microsoft Office online applications, operating systems, and much more! Learn personal strengths and how they relate to potential career opportunities.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix cs">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/computer-science/computer-network-security.png" src="/assets/images/classes/computer-science/computer-network-security.png?_cchid=b07624bd62710f34e900fe593d159e75">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Computer &amp; Network Security Fundamentals</h4>
+                          </a>
+                          <p class="sup-description">Covering the fundamentals of computer safety, network security, and prevention of digital attacks, this course allows students to experience a hands-on approach to security strategies and explore employment opportunities in one of the fastest-growing industries: Cybersecurity.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix cs">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/computer-science/cybersecurity-essentials.png" src="/assets/images/classes/computer-science/cybersecurity-essentials.png?_cchid=2567494a97299013c37423dab8600c6e">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Cybersecurity Essentials</h4>
+                          </a>
+                          <p class="sup-description">Covering defensive strategies for computer, mobile device, and network security, students will experience a hands-on approach to security strategies, expand your computer and networking security techniques, and improve your problem-solving skills. They also have the chance to explore numerous employment opportunities and prepare for one of the fastest-growing industries: Cybersecurity.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Business Classes -->
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix business">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/business/accounting-applications.png" src="/assets/images/classes/business/accounting-applications.png?_cchid=94b6f78f6d0d040733fddd438ab7aceb">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Accounting Applications 1</h4>
+                          </a>
+                          <p class="sup-description">In Accounting Applications 1, students will build a broad foundation of knowledge and skills of accounting concepts in order to analyze, classify, and record business transactions in a manual and computerized setting; prepare financial statements and communicate information to stakeholders; maintain payroll records, and determine proper handling of cash control procedures.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix business">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/business/criminal-justice-operations.png" src="/assets/images/classes/business/criminal-justice-operations.png?_cchid=683dc23154606712d7211d533639308a">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Criminal Justice Operations 1</h4>
+                          </a>
+                          <p class="sup-description">Explore the fields of law enforcement, the court system, and the correctional system. Students will acquire technical skill proficiency, industry knowledge, higher-order reasoning and problem-solving skills, general employability skills, and occupation-specific skills needed in all aspects of law, public safety, and security careers.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix business">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/business/hospitality-and-tourism.png" src="/assets/images/classes/business/hospitality-and-tourism.png?_cchid=18b9fbae80b1fdd9708b24ae014cc8a8">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Introduction to Hospitality &amp; Tourism</h4>
+                          </a>
+                          <p class="sup-description">Students will learn about segments such as airlines, hotels, and cruise ships, as well as customer service and selling techniques. The course will prepare them to launch their career in hospitality and tourism, with projects and take-aways that they will be able to use immediately to help them land their dream job.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix business">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/business/intro-teaching-profession.png" src="/assets/images/classes/business/intro-teaching-profession.png?_cchid=ceb9bd292c7d70c324199593448e5679">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Introduction to the Teaching Profession</h4>
+                          </a>
+                          <p class="sup-description">Students will learn about the history, purposes, issues, ethics, laws and regulations, roles and qualifications of teaching. As they work through the course, they'll participate in a minimum of 20 hours of guided observations and field experience in different settings. They'll also build a working portfolio throughout their program, as they learn about leadership and skills opportunities offered in CTSO activities.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix business">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/business/parenting-skills.png" src="/assets/images/classes/business/parenting-skills.png?_cchid=8734727d8d6fa3a0db0c3a536d13c382">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Parenting Skills</h4>
+                          </a>
+                          <p class="sup-description">Parenting involves more than having a child and providing food and shelter. This one-semester course gives students the opportunity to explore parenting roles and responsibilities, nurturing and protective environments for children, positive parenting strategies, and effective communication in parent/child relationships.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix business">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/business/culinary-arts-1.png" src="/assets/images/classes/business/culinary-arts-1.png?_cchid=d70e11bff29d6188ce9a7b95167ff464">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Culinary Arts 1</h4>
+                          </a>
+                          <p class="sup-description">This course covers the history of the food service industry and careers in that industry. Also covered are safety in the workplace; employability skills; leadership/teamwork skills; care and use of commercial culinary equipment; basic food science; basic nutrition; and following recipes in food preparation labs.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix business">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/business/culinary-arts-2.png" src="/assets/images/classes/business/culinary-arts-2.png?_cchid=933cebe7c3ea97720ae89b5fe9aba217">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Culinary Arts 2</h4>
+                          </a>
+                          <p class="sup-description">Covering state mandated guidelines for food service and safe handling certification, students will prepare quality food products demonstrating creativity, safety, and sanitary work procedures as it relates to food science principles including cooking, baking, and nutrition.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix business">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/business/career-research-decision-making.png" src="/assets/images/classes/business/career-research-decision-making.png?_cchid=f138f8b60eaacc9da55262e6d0801384">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Career Research and Decision Making</h4>
+                          </a>
+                          <p class="sup-description">In this course students will learn how to prepare for, get accepted to and pay for college. They will explore different career and education pathways, study interview techniques and networking tips, create smart resumes, and learn how to plan for a successful future.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix business">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/business/leadership-skills-development.png" src="/assets/images/classes/business/leadership-skills-development.png?_cchid=40602b7137576d69bae7b1aea64b23de">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Leadership Skills Development</h4>
+                          </a>
+                          <p class="sup-description">Succeed in high school, college, and beyond. In this two-semester course, students will learn how to take action, manage their time, chart their goals, and many other leadership techniques.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix business">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/business/agricultural-communications-2.png" src="/assets/images/classes/business/agricultural-communications-2.png?_cchid=a052e5ef04b4b95e151dee79cdfedbea">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Agricultural Communications 2</h4>
+                          </a>
+                          <p class="sup-description">Through this course students are introduced to visual, verbal, and written techniques to communicate agricultural information. This course prepares students with specialized knowledge of agriculture and media as they learn to design and develop marketing materials, engage in the community, and address needs of agricultural producers and consumers in a moral and ethical way.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix business">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/business/agricultural-communications-3.png" src="/assets/images/classes/business/agricultural-communications-3.png?_cchid=3cff8c1939bad8cd426fe066feb23f36">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Agricultural Communications 3</h4>
+                          </a>
+                          <p class="sup-description">This class provides real-world practice in writing, speaking, photography, graphic design, and web communication to prepare students to report and present agricultural topics with a detailed knowledge aimed to gain attention. Students will also learn how to effectively use their voice to present and debate agricultural topics.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix business">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/business/human-growth-and-development.png" src="/assets/images/classes/business/human-growth-and-development.png?_cchid=7422e6b96ac09c83522584751ca2fcde">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Human Growth &amp; Development</h4>
+                          </a>
+                          <p class="sup-description">From the moment you’re born, you’re a learner. In this course, students learn about different theories of development, as well as how to apply those theories to meet the varying needs of students in their classroom. They’ll also learn what can affect a student’s development, including health and safety concerns, heredity, and their environment.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix business">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/business/health-science-foundations.png" src="/assets/images/classes/business/health-science-foundations.png?_cchid=ad3a3c87fa22c3bd9b6e9ccd4f957bd4">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Health Science Foundations</h4>
+                          </a>
+                          <p class="sup-description">This course is designed to provide the student with in-depth knowledge of the health care system and introduce them to various occupations in the field. Students will explore the educational requirements, licenses, and certifications for careers at multiple levels within the health care system. The learning focuses on communication and interpersonal skills, use of technology, ethics, and the development of critical thinking and problem-solving skills.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Science Classes -->
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix science">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/science/physics.png" src="/assets/images/classes/science/physics.png?_cchid=b355e8e62146b8218daec5bb542e0828">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Physics</h4>
+                          </a>
+                          <p class="sup-description">Discover the contributions of geniuses like Galileo, Newton, and Einstein by learning about the concepts, theories, and laws that govern the interactions of matter, forces, and energy throughout the universe and how those interactions apply to everyday experiences.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix science">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/science/chemistry.png" src="/assets/images/classes/science/chemistry.png?_cchid=01de3a0b8f85a00a487013cb149593a4">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Chemistry</h4>
+                          </a>
+                          <p class="sup-description">Atoms and molecules are the fundamental particles in our universe, and chemistry is your guide to understanding all about them. This course will strengthen scientific inquiry skills while challenging higher-order thinking processes through problem-solving and real-world applications. Chemistry is what connects all parts of the world together.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix science">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/science/physical-science.png" src="/assets/images/classes/science/physical-science.png?_cchid=a84541c068b58c124398788fc1e2d6de">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Physical Science</h4>
+                          </a>
+                          <p class="sup-description">This course teaches the foundational concepts of physics and chemistry. Students will build an understanding of physical and chemical phenomena through scientific inquiry, interactive experiences, virtual and hands-on labs, higher order thinking, and collaborative projects; enabling them to apply these principles to their everyday lives.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix science">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/science/biology.png" src="/assets/images/classes/science/biology.png?_cchid=76b69fc263353a327a55e07ec5cb3a0e">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Biology</h4>
+                          </a>
+                          <p class="sup-description">Explore the structure, function, diversity, and evolution of living matter by taking an in-depth look at the fundamental characteristics of living organisms. You will have the opportunity to perform hands-on lab activities and develop relationships through collaborative learning.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix science">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/science/forensic-science.png" src="/assets/images/classes/science/forensic-science.png?_cchid=54c330c3dd48ad55f85c8565c7b07faf">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Forensic Science</h4>
+                          </a>
+                          <p class="sup-description">This course examines the latest forensic techniques and innovations used to solve crimes. It also focuses on basic scientific principles and laboratory processes used in the field, such as DNA testing, toxicology, and material analysis. Investigative experiences for students include spectrometry, electrophoresis, and evidence analysis techniques. Students also study crime scene processing and evidence collection during crime scene investigations (CSI).</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix science">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/science/earth-space-science.png" src="/assets/images/classes/science/earth-space-science.png?_cchid=b1d24dc83875b58bd9dc3562cf0b7f4e">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Earth-Space Science</h4>
+                          </a>
+                          <p class="sup-description">This laboratory course focuses on the study of space and the geologic and atmospheric forces that shape our world. Through experimentation and investigation, students will explore Earth’s cycles, including the geosphere, hydrosphere, cryosphere, atmosphere, and carbon cycle.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix science">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/science/environmental-science.png" src="/assets/images/classes/science/environmental-science.png?_cchid=8dcaa543001c8a0cbe9e24ac5ea94cde">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Environmental Science</h4>
+                          </a>
+                          <p class="sup-description">Discuss the environmental challenges that impact our future, such as land use, pollution, climate change, and loss of biodiversity. This course is centered around achieving global sustainability to meet the needs of a growing human population, while also maintaining natural resources and protecting Earth's various systems. Students will also explore the short-and long-term consequences of our actions to human health and the environment are also a course focus.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix science">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/science/marine-science.png" src="/assets/images/classes/science/marine-science.png?_cchid=2f987961805dca40c06684a29179577e">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Marine Science</h4>
+                          </a>
+                          <p class="sup-description">Delve deeply into Earth’s bodies of water and study geologic structures and how they impact the oceans. Investigate characteristics of various populations of aquatic life, patterns of distribution, and ongoing changes occurring in our ecosystem.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix science">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/science/anatomy-and-physiology.png" src="/assets/images/classes/science/anatomy-and-physiology.png?_cchid=bba4be174fc780eb8eaacf6bff687c69">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Anatomy &amp; Physiology</h4>
+                          </a>
+                          <p class="sup-description">Explore the human body and learn how you can help your body cope with many different situations. Students will study the structure, location, and function of various systems within the human body and how these systems interact.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix science">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/science/agriscience-foundations.png" src="/assets/images/classes/science/agriscience-foundations.png?_cchid=0596879ad8c09c6389c10334dff960fc">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Agriscience Foundations</h4>
+                          </a>
+                          <p class="sup-description">Dive into agricultural history and its global impact and learn about scientific and research concepts that drive the field, as well as the effects of agriculture on the environment.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Economics Classes -->
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix economics">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/economics/economics.png" src="/assets/images/classes/economics/economics.png?_cchid=1827073f60c3f26a342d410ab2511405">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Economics</h4>
+                          </a>
+                          <p class="sup-description">Economic decisions affect us every day! Students become smart consumers who understand the flow of an economy between individuals, businesses, governments, and the rest of the world.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix economics">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/economics/economics-financial-literacy.png" src="/assets/images/classes/economics/economics-financial-literacy.png?_cchid=2f5b19300c1b5591acf5068b4c3bee1f">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Economics with Financial Literacy</h4>
+                          </a>
+                          <p class="sup-description">This course helps students to become a more informed consumer, producer, investor, and taxpayer. They explore topics like career planning, insurance, spending, and credit to learn how your choices directly affect your future.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix economics">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/economics/personal-financial-literacy.png" src="/assets/images/classes/economics/personal-financial-literacy.png?_cchid=8b464194a4a3d4dbc32a7ad8f53ce389">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>Personal Financial Literacy</h4>
+                          </a>
+                          <p class="sup-description">Saving. Investing. Spending! Students learn how to save and spend wisely, the ins and outs of credit, avoidance of identity theft, and how to make the most of investing their hard-earned money. They become smart financial decision-makers and let their future selves reap the benefits.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix economics">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/economics/ap-microeconomics.png" src="/assets/images/classes/economics/ap-microeconomics.png?_cchid=a9f676e003900e1f90e8ef838a851478">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>AP Microeconomics</h4>
+                          </a>
+                          <p class="sup-description">Students explore the power of marginal thinking and apply it to common decisions that individuals and business firms encounter each day. They examine, interpret, analyze, and model key microeconomics concepts and processes, from the shifting supply and demand for familiar products to the model of the labor market and how wages are determined.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix economics">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/classes/economics/ap-macroeconomics.png" src="/assets/images/classes/economics/ap-macroeconomics.png?_cchid=2c5ee57a2ee35eca20d549c8cf4d2eba">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title">
+                            <h4>AP Macroeconomics</h4>
+                          </a>
+                          <p class="sup-description">This course helps students to understand the choices they make as a producer, consumer, investor, and tax-payer. They are provided with the knowledge and decision-making tools necessary for understanding how a society must organize its limited resources to satisfy its unlimited wants.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Container Ends -->
+      </section></div>
+      <!-- Portfolio Section Ends -->
+
+    </div>
+    <!-- Content Area End -->
+    
+
+
+  </div>
+        <script data-cms-original-src="/assets/js/jquery.min.js" src="/assets/js/jquery.min.js?_cchid=c9f5aeeca3ad37bf2aa006139b935f0a"></script>
+        <script data-cms-original-src="/assets/js/jquery.nav.js" src="/assets/js/jquery.nav.js?_cchid=f396c35e1eaf4feead5d23354b0d63d9"></script>
+	<script data-cms-original-src="/assets/js/owl.carousel.min.js" src="/assets/js/owl.carousel.min.js?_cchid=2fec2de7cc7d2d9a66130311f52b5db8"></script>
+        <script data-cms-original-src="/assets/js/form-validator.min.js" src="/assets/js/form-validator.min.js?_cchid=81df0465f243a2e7b7b06b8ad6015173"></script>	  
+        <script data-cms-original-src="/assets/js/contact-form-script.js" src="/assets/js/contact-form-script.js?_cchid=edc00e32d3c4955cabbe32797ae46ef2"></script>
+        <script data-cms-original-src="/assets/js/jasny-bootstrap.min.js" src="/assets/js/jasny-bootstrap.min.js?_cchid=8e73dce7b6e41f12687b381f6c0d08d3"></script>
+        <script data-cms-original-src="/assets/js/jquery.mixitup.js" src="/assets/js/jquery.mixitup.js?_cchid=b1b1e54925b078fa631cbfbf05989651"></script>	  
+        <script data-cms-original-src="/assets/js/jquery.countTo.js" src="/assets/js/jquery.countTo.js?_cchid=b8d0ef1e38a5bbd7b8d7b202ee726987"></script>
+        <script data-cms-original-src="/assets/js/jquery.easing.min.js" src="/assets/js/jquery.easing.min.js?_cchid=9cda9e740bbf260a190f4041132b5105"></script>
+        <script data-cms-original-src="/assets/js/main.js" src="/assets/js/main.js?_cchid=b52f02e4aa7f4debc6174b5ec1948e10"></script>	
+        <script data-cms-original-src="/assets/js/scrolling-nav.js" src="/assets/js/scrolling-nav.js?_cchid=e5310274f5fd197e050bb44536dc66c0"></script>
+        <script data-cms-original-src="/assets/js/tether.min.js" src="/assets/js/tether.min.js?_cchid=ecdfd3dc464ceda5f483bb5c96a6e3d2"></script>
+        <script data-cms-original-src="/assets/js/bootstrap.min.js" src="/assets/js/bootstrap.min.js?_cchid=0827a0bdcd9a917990eee461a77dd33e"></script>
+
+	<script data-cms-original-src="/assets/js/portfolio.js" src="/assets/js/portfolio.js?_cchid=46d1646096e202a6eada743b27349dee"></script>
+
+                  
+                  
+                  
+                  
+              </div>
+            </div>
+
+    </div>
+	</section>
+<br><br>
+
+<section id="statistics" style="background-color:#303C4B">
+     <div id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-header-title">
+              <h2 class="heading-title text-center" style="color:white">Statistics</h2>
+            </div>
+          <div class="row count-to-sec">
+            <div class="col-md-3 col-sm-6 count-one">
+              <span class="icon"><i class="fa fa-check"> </i></span>
+              <h3 class="timer count-value" data-to="757540" data-speed="500">602,931</h3>
+              <hr class="width25-divider">
+              <small class="count-title">Total Semester Completions</small>
+            </div>
+
+            <div class="col-md-3 col-sm-6 count-one">
+              <span class="icon"><i class="fa fa-user"> </i></span>
+              <h3 class="timer count-value" data-to="244839" data-speed="500">242,287</h3>
+              <hr class="width25-divider">
+              <small class="count-title">Students Served</small>
+            </div>
+
+            <div class="col-md-3 col-sm-6 count-one">
+              <span class="icon"><i class="fa fa-graduation-cap"> </i></span>
+              <h3 class="timer count-value" data-to="1048" data-speed="500">1,075</h3>
+              <hr class="width25-divider">
+              <small class="count-title">Full Time Graduates</small>
+            </div>
+
+            <div class="col-md-3 col-sm-6 count-one">
+              <span class="icon"><i class="fa fa-users"> </i></span>
+              <h3 class="timer count-value" data-to="60" data-speed="500">60+</h3>
+              <hr class="width25-divider">
+              <small class="count-title">Clubs</small>
+            </div>
+          </div>
+          <center><p style="color:white">*These are statistics from the 2021-2022 school year</p></center>
+        </div>
+      </div>
+</section>
+
+<section id="projects">
+            <div id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-header-title">
+              <h2 class="heading-title text-center">Student Projects</h2>
+            </div>
+
+<div class="row">
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://chapter.exosyzygy.com/assets/images/student-projects/more_decisions.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">More Decisions Project</h3>
+                <p class="card-text">In Foundations of Programming, students are tasked with designing a Python program in which the user is able to navigate a cursor in the middle of the program screen in whichever direction they choose, ultimately to showcase their knowledge of the Turtle module.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://chapter.exosyzygy.com/assets/images/student-projects/all_about_me.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">All About Me Project</h3>
+                <p class="card-text">In Digital Information Technology, students are tasked with creating a PowerPoint to showcase what they are all about, in turn to use the new skills they learned within the program.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://chapter.exosyzygy.com/assets/images/student-projects/resume.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Resume Project</h3>
+                <p class="card-text">In Career Research and Decision Making, students put together a resume to learn how to make an effective one that they would use in the future to help them land the job that they want.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://chapter.exosyzygy.com/assets/images/student-projects/guess_the_number-1.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Iterative Loops Project</h3>
+                <p class="card-text">In Procedural Programming, students design a text-based game, coded in Python, to show off their advanced knowledge of looping.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://chapter.exosyzygy.com/assets/images/student-projects/speech.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Speech Project</h3>
+                <p class="card-text">In Agricultural Communications 2, students learn how to develop a speech, and are then tasked with putting one together themselves.  This helps them to learn real-world skills that can be used across all career fields.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://chapter.exosyzygy.com/assets/images/student-projects/contact-data.png"alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Contact Data Challenge Program</h3>
+                <p class="card-text">In AP Computer Science A, students learn how to implement sequential/binary search methods with Java by designing a program to search contact data stored within an array by specific details.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://chapter.exosyzygy.com/assets/images/student-projects/food_labs-2.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Food Labs</h3>
+                <p class="card-text">In Culinary Arts 1/2, students particiapte in various food labs to demonstrate their understanding of preparing food, safe use of equipment, and nutrition.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://chapter.exosyzygy.com/assets/images/student-projects/budget_project.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Budget Project</h3>
+                <p class="card-text">In Economics, students learn how to create a budget, allowing them to keep track of their income and expenses and know how to adapt as needed.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+        </div>
+
+</section>
+<section id="map" style="background-color:#303C4B">
+<div id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-header-title">
+              <h2 class="heading-title text-center" style="color:white">Find Us</h2>
+            </div>
+            <div class="container">
+<center><div class='embed-container'><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.195107542658!2d-81.46997438510931!3d28.519007582462734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77921a2cd39b5%3A0x7e33b9b9fb38536b!2sFlorida%20Virtual%20School!5e1!3m2!1sen!2sus!4v1640880398228!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div></center></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+      <!-- Footer Section -->
+      <footer class="footer">
+    
+        <!-- Copyright -->
+        <div id="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <p class="copyright-text">2023 TSA Webmaster Project
+                </p>
+              </div>
+              <div class="col-md-6  col-sm-6">
+                <ul class="nav nav-inline  justify-content-end ">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/">FLVS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/tsa">TSA</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://www.exosyzygy.ga">Design Brief</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://documentation.flvswebmaster.ga">Documentation</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Copyright  End-->
+
+      </footer>
+      <!-- Footer Section End-->
+            
+            
+<!-- Content area end -->
+</div>

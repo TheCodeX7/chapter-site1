@@ -1,0 +1,647 @@
+---
+layout: index
+title: Index Test Page
+css: 
+js: sliders.js
+---
+{% include JB/setup %}
+<meta name="description" content="The mission of the Florida Virtual School is to equip students for success by developing and delivering highly effective digital learning through an intuitive online platform.">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.box {
+  transition: box-shadow .3s;
+}
+.box:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+
+#button {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Styles for the content section */
+
+.content {
+  width: 77%;
+  margin: 50px auto;
+  font-family: 'Merriweather', serif;
+  font-size: 17px;
+  color: #6c767a;
+  line-height: 1.9;
+}
+@media (min-width: 500px) {
+  .content {
+    width: 43%;
+  }
+  #button {
+    margin: 30px;
+  }
+}
+.content h1 {
+  margin-bottom: -10px;
+  color: #03a9f4;
+  line-height: 1.5;
+}
+.content h3 {
+  font-style: italic;
+  color: #96a2a7;
+}
+
+
+statisticsbg {
+  background-color: #303C4B
+}
+
+/* Extra Things */
+body{background: #eee ;font-family: 'Open Sans', sans-serif;}h3{font-size: 30px; font-weight: 400;text-align: center;margin-top: 50px;}h3 i{color: #444;}
+</style>
+<script>
+    // ===== Scroll to Top ==== 
+$(window).scroll(function() {
+    if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+        $('#return-to-top').fadeIn(200);    // Fade in the arrow
+    } else {
+        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+    }
+});
+$('#return-to-top').click(function() {      // When arrow is clicked
+    $('body,html').animate({
+        scrollTop : 0                       // Scroll to top of body
+    }, 500);
+});
+</script>
+<script src="smooth-nav.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+            <!-- navbar-default -->
+            <nav class="navbar navbar-toggleable-sm navbar-light bg-default">
+              <div class="container">
+                <a class="navbar-brand" href="/"><img src="{{ BASE_PATH }}/assets/images/logo.png" width="100" height="100" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar1">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#statistics">Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Student Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#map">Find Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tsa">TSA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://www.sixfigureinitiative.ga">Design Brief</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://documentation.flvswebmaster.ga">Documentation</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+<!-- Content Area Start -->
+<div id="content">
+      <!-- Light header -->
+        <div class="header-style-3">
+        <div class="container">
+        <div class="row">
+        <div class="col-xs-12 col-sm-6">
+        </div> 
+            <div class="col-xs-12 col-sm-6">
+              <div class="hero-content-v2">
+                <center><h3><strong>Florida Virtual School</strong></h3></center>
+                <center><p>
+                  2145 Metrocenter Blvd #100, Orlando, FL 32835
+                </p></center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <section id="intro1" style="background-color:#303C4B">
+            <div class="header-caption">
+              <div class="row">
+                <div class="col-md-12 header-content">
+                  <center><h3 style="color:white">Mission</h3></center>
+                  <center><h5 style="color:white" class="header-text animated fadeIn">To equip students for success by developing and delivering highly effective digital learning through an intuitive online platform.</h5></center>
+                  <br>
+                  <br>
+                  <center><h3 style="color:white">Vision</h3></center>
+                  <center><h5 style="color:white" class="header-text animated fadeIn">To lead online education worldwide with innovative digital solutions that individualize learning for each student.</h5></center>
+                  <br><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+      </section>
+      <section class="section" id="portfolio">
+        <div class="container">
+              <div class="row">
+              <div class="col-md-20">
+              <div class="page-header-title">
+                <center><h1 class="heading-title text-center">COURSE OFFERINGS AT FLORIDA VIRTUAL SCHOOL</h1></center>
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio Section -->
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Portfolio Controller/Buttons -->
+              <div class="controls text-center wow fadeInUpQuick" data-wow-delay=".6s">
+                <a class="filter active btn btn-common" data-filter="all">
+                  All 
+                </a>
+                <a class="filter btn btn-common" data-filter=".branding">
+                  Technology Education 
+                </a>
+                <a class="filter btn btn-common" data-filter=".marketing">
+                  Business/Career
+                </a>
+                <a class="filter btn btn-common" data-filter=".planning">
+                  Planning 
+                </a>
+                <a class="filter btn btn-common" data-filter=".research">
+                  Research 
+                </a>
+              </div>
+              <!-- Portfolio Controller/Buttons Ends-->
+            </div>
+
+            <!-- Portfolio Recent Projects -->
+            <div class="row wow fadeInUpQuick" data-wow-delay="0.8s" id="portfolio">
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix marketing planning">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/portfolio/img1.jpg" src="/assets/images/portfolio/img1.jpg?_cchid=d786ab5f586eeceb28debbfe2cfe54fd">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-link">
+                          <a class="left-link" href="#"><i class="fa fa-link"></i></a>
+                          <a class="right-link" href="#"><i class="fa fa-heart"></i></a>
+                        </div>
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title" href="#">
+                            <h4>TITLE HERE</h4>
+                          </a>
+                          <p class="sup-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente vel quisquam.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix branding planning">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/portfolio/img2.jpg" src="/assets/images/portfolio/img2.jpg?_cchid=fe6cf7462c8ccf9b66638d8921ece0ba">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-link">
+                          <a class="left-link" href="#"><i class="fa fa-link"></i></a>
+                          <a class="right-link" href="#"><i class="fa fa-heart"></i></a>
+                        </div>
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title" href="#">
+                            <h4>TITLE HERE</h4>
+                          </a>
+                          <p class="sup-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente vel quisquam.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix branding research">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/portfolio/img3.jpg" src="/assets/images/portfolio/img3.jpg?_cchid=682193a52e08cc2ea6e07fa6f0f9f646">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-link">
+                          <a class="left-link" href="#"><i class="fa fa-link"></i></a>
+                          <a class="right-link" href="#"><i class="fa fa-heart"></i></a>
+                        </div>
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title" href="#">
+                            <h4>TITLE HERE</h4>
+                          </a>
+                          <p class="sup-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente vel quisquam.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix marketing research">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/portfolio/img4.jpg" src="/assets/images/portfolio/img4.jpg?_cchid=e8a5e396007142fb107d2667f0303c96">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-link">
+                          <a class="left-link" href="#"><i class="fa fa-link"></i></a>
+                          <a class="right-link" href="#"><i class="fa fa-heart"></i></a>
+                        </div>
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title" href="#">
+                            <h4>TITLE HERE</h4>
+                          </a>
+                          <p class="sup-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente vel quisquam.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix marketing planning">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/portfolio/img5.jpg" src="/assets/images/portfolio/img5.jpg?_cchid=bd2129e3e00fdeb9777683f004df9199">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-link">
+                          <a class="left-link" href="#"><i class="fa fa-link"></i></a>
+                          <a class="right-link" href="#"><i class="fa fa-heart"></i></a>
+                        </div>
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title" href="#">
+                            <h4>TITLE HERE</h4>
+                          </a>
+                          <p class="sup-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente vel quisquam.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix planning research">
+                <div class="portfolio-item">
+                  <div class="portfolio-img">
+                    <img alt="" data-cms-original-src="/assets/images/portfolio/img6.jpg" src="/assets/images/portfolio/img6.jpg?_cchid=786d6cacf7a8af405563d4e1a274d949">
+                  </div>
+                  <div class="portfoli-content">
+                    <div class="sup-desc-wrap">
+                      <div class="sup-desc-inner">
+                        <div class="sup-link">
+                          <a class="left-link" href="#"><i class="fa fa-link"></i></a>
+                          <a class="right-link" href="#"><i class="fa fa-heart"></i></a>
+                        </div>
+                        <div class="sup-meta-wrap">
+                          <a class="sup-title" href="#">
+                            <h4>TITLE HERE</h4>
+                          </a>
+                          <p class="sup-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente vel quisquam.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Container Ends -->
+      </section>
+      <!-- Portfolio Section Ends -->
+<br>
+
+<section id="statistics" style="background-color:#303C4B">
+     <div id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-header-title">
+              <h2 class="heading-title text-center" style="color:white">Statistics</h2>
+            </div>
+          <div class="row count-to-sec">
+            <div class="col-md-3 col-sm-6 count-one">
+              <span class="icon"><i class="fa fa-check"> </i></span>
+              <h3 class="timer count-value" data-to="562196" data-speed="500">562,196</h3>
+              <hr class="width25-divider">
+              <small class="count-title">Total Semester Completions</small>
+            </div>
+
+            <div class="col-md-3 col-sm-6 count-one">
+              <span class="icon"><i class="fa fa-user"> </i></span>
+              <h3 class="timer count-value" data-to="231531" data-speed="500">231,531</h3>
+              <hr class="width25-divider">
+              <small class="count-title">Students Served</small>
+            </div>
+
+            <div class="col-md-3 col-sm-6 count-one">
+              <span class="icon"><i class="fa fa-graduation-cap"> </i></span>
+              <h3 class="timer count-value" data-to="753" data-speed="500">753</h3>
+              <hr class="width25-divider">
+              <small class="count-title">Full Time Graduates</small>
+            </div>
+
+            <div class="col-md-3 col-sm-6 count-one">
+              <span class="icon"><i class="fa fa-users"> </i></span>
+              <h3 class="timer count-value" data-to="55" data-speed="500">55+</h3>
+              <hr class="width25-divider">
+              <small class="count-title">Clubs</small>
+            </div>
+          </div>
+          <center><p style="color:white">*These are statistics from the 2019-2020 school year</p></center>
+        </div>
+      </div>
+</section>
+
+<section id="projects">
+            <div id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-header-title">
+              <h2 class="heading-title text-center">Student Projects</h2>
+            </div>
+
+<div class="row">
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/more_decisions.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">More Decisions Project</h3>
+                <p class="card-text">In Foundations of Programming, students are tasked with designing a program, coded in Python, in which the user is able to navigate a cursor in the middle of the program screen in whichever direction they choose.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/all_about_me.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">All About Me Project</h3>
+                <p class="card-text">In Digital Information Technology, students are tasked with creating a PowerPoint to showcase what they are all about, in turn to use the new skills they learned within the program.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/resume.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Resume Project</h3>
+                <p class="card-text">In Career Research and Decision Making, students put together a resume to learn how to make an effective one that they would use in the future to help them land the job that they want.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/iterative_loops.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Iterative Loops Project</h3>
+                <p class="card-text">In Procedural Programming, students design a text-based adventure program, coded in Python, to show off their advanced knowledge of looping.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/commercial-pitch.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Speech Project</h3>
+                <p class="card-text">In Agricultural Communications 2, students learn how to develop a speech, and are then tasked with putting one together themselves.  This helps them to learn real-world skills that can be used across all career fields.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/hello_world.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Hello World Project</h3>
+                <p class="card-text">In AP Computer Science A, students design their first program using the two most famous words in programming, "Hello, World!"</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+          
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/food_labs.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Food Labs</h3>
+                <p class="card-text">In Culinary Arts 1/2, students particiapte in various food labs to demonstrate their understanding of preparing food, safe use of equipment, and nutrition.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+
+          <!-- Start card -->
+          <div class="col-sm-6 col-md-3">
+            <div class="card">
+                <div class="box">
+              <img class="card-img-top" src="https://www.flvswebmaster.ga/assets/images/student-projects/budget.png" alt="">
+              <div class="card-block text-center">
+                <h3 class="card-title">Budget Project</h3>
+                <p class="card-text">In Personal Financial Literacy, students learn how to keep track of their expenses, while sticking to a set budget that they create.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End card -->
+        </div>
+
+</section>
+<section id="map" style="background-color:#303C4B">
+<div id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-header-title">
+              <h2 class="heading-title text-center" style="color:white">Find Us</h2>
+            </div>
+<center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.195107542658!2d-81.46997438510931!3d28.519007582462734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77921a2cd39b5%3A0x7e33b9b9fb38536b!2sFlorida%20Virtual%20School!5e1!3m2!1sen!2sus!4v1640880398228!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></center>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+      <footer class="default-footer text-center">
+        <div class="container">
+          <br /><br /><br />
+          <img class="mb-40 footer-logo" src="https://www.flvswebmaster.ga/assets/images/logo.png" width="150" height="150">
+          <span class="copy-right dis-blk">2022 TSA Webmaster Project</span>
+          
+        </div>
+      </footer>
+            
+            
+<!-- Content area end -->
+</div>
